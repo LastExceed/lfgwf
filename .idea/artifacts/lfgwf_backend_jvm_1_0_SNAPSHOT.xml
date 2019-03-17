@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="lfgwf-backend-jvm-1.0-SNAPSHOT">
+    <output-path>$PROJECT_DIR$/lfgwf-backend/build/libs</output-path>
+    <root id="archive" name="lfgwf-backend-jvm-1.0-SNAPSHOT.jar">
+      <element id="module-output" name="wf.lfg.lfgwf-backend.jvmMain" />
+    </root>
+  </artifact>
+</component>

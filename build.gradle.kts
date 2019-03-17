@@ -1,20 +1,13 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("jvm") version "1.3.21"
+    kotlin("jvm") version "1.3.21" apply false
+    id("kotlin2js") version "1.3.21" apply false
 }
 
-group = "wf.lfg"
-version = "1.0-SNAPSHOT"
+allprojects {
+    group = "wf.lfg"
+    version = "1.0-SNAPSHOT"
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    repositories {
+        jcenter()
+    }
 }
