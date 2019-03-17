@@ -1,5 +1,6 @@
 .gradle
 build/
+web/
 
 # Ignore Gradle GUI config
 gradle-app.setting
