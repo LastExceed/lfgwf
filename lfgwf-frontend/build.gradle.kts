@@ -32,7 +32,7 @@ val build by tasks.getting {
                 from(zipTree(file.absolutePath))
                 into("$buildDir/app/js/lib")
                 include {
-                    it.path.endsWith(".js")
+                    it.path.endsWith(".js") || it.path.endsWith(".js.map")
                 }
             }
         }

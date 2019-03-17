@@ -9,6 +9,7 @@ dependencies {
     implementation("org.slf4j:slf4j-simple:1.7.26")
     implementation("io.ktor:ktor-server-core:1.1.3")
     implementation("io.ktor:ktor-server-netty:1.1.3")
+    implementation("io.ktor:ktor-html-builder:1.1.3")
     implementation("com.google.code.gson:gson:2.8.5")
 }
 
