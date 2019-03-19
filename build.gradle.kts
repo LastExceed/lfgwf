@@ -44,6 +44,7 @@ kotlin {
                     implementation("io.ktor:ktor-html-builder:$ktorVersion")
                     implementation("io.ktor:ktor-websockets:$ktorVersion")
                     implementation("com.google.code.gson:gson:$gsonVersion")
+                    implementation("azadev.kotlin:aza-kotlin-css:1.0")
                 }
             }
         }

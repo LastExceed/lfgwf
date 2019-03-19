@@ -1,5 +1,7 @@
 package wf.lfg
 
+import azadev.kotlin.css.*
+import azadev.kotlin.css.dimens.px
 import configureWebSocket
 import io.ktor.application.call
 import io.ktor.html.respondHtml
@@ -49,26 +51,30 @@ fun Routing.configureRoot() {
                 title { +"Console Output" }
                 style {
                     unsafe {
-                        raw(
-                            """
-                                table {
-                                    border-collapse: collapse;
-                                }
-                                th {
-                                    padding: 4px;
-                                }
-                                td {
-                                    padding: 4px;
-                                    border: 1px solid black;
-                                }
-                                .left {
-                                    text-align: left;
-                                }
-                                .center {
-                                    text-align: center;
-                                }
-                                """
-                        )
+                        +Stylesheet {
+                            div {
+                                verticalAlign = CENTER
+                            }
+                            table {
+                                borderCollapse = COLLAPSE
+                            }
+                            th {
+                                padding = 4.px
+                            }
+                            td {
+                                padding = 4.px
+                                border = "1px solid black"
+                            }
+                            ".left" {
+                                textAlign = LEFT
+                            }
+                            ".center" {
+                                textAlign = CENTER
+                            }
+                            ".plus-minus" {
+                                padding = 0
+                            }
+                        }.render()
                     }
                 }
             }
