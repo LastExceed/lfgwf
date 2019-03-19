@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="wf.lfg.lfgwf-backend.jvmMain" target="1.8" />
-      <module name="wf.lfg.lfgwf-backend.jvmTest" target="1.6" />
+      <module name="wf.lfg.lfgwf.jvmMain" target="1.8" />
+      <module name="wf.lfg.lfgwf.jvmTest" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

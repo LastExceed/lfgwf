@@ -63,14 +63,15 @@ kotlin {
                 languageVersion = "1.3"
                 moduleKind = "umd"
                 sourceMap = true
+                sourceMapEmbedSources = "always"
                 metaInfo = true
+                freeCompilerArgs = listOf("-Xuse-experimental=kotlin.contracts.ExperimentalContracts")
             }
         }
         val main by compilations.getting {
             defaultSourceSet {
                 dependencies {
                     implementation(kotlin("stdlib-js"))
-                    implementation("org.jetbrains.kotlinx:kotlinx-html-js:0.6.12")
                 }
             }
         }

@@ -1,15 +1,18 @@
 package wf.lfg
 
-import kotlinx.html.button
-import kotlinx.html.dom.create
-import kotlinx.html.td
-import kotlinx.html.tr
 import org.w3c.dom.HTMLTableElement
 import org.w3c.dom.MessageEvent
 import org.w3c.dom.WebSocket
 import org.w3c.dom.events.Event
 import kotlin.browser.document
 import kotlin.browser.window
+
+val requests = listOf(
+    "Malox10",
+    "Shareeza",
+    "NiliusRex"
+)
+
 
 val squads = listOf(
     Squad("high index 1h for john prodman", 3, "LastExceed"),
@@ -30,14 +33,42 @@ fun main() {
             }
         }
 
-        val table = document.getElementById("table") as HTMLTableElement
+        val requestsTable = document.getElementById("table_requests") as HTMLTableElement
+        requests.forEach { request ->
+            requestsTable.tr {
+                td { text(request) }
+                td {
+                    button {
+                        text("Invite")
+                        onclick = fun(_: Event) {
+                            invite(request)
+                        }
+                    }
+                }
+                td { button { text("") } }
+            }
+        }
+
+        val resultsTable = document.getElementById("table_results") as HTMLTableElement
         squads.forEach { squad ->
-            table.appendChild(document.create.tr {
-                td { +squad.title }
-                td(classes = "center") { +squad.openSlots.toString() }
-                td { +squad.host }
-                td(classes = "center") { button { +"button" } }
-            })
+            resultsTable.tr {
+                td {
+                    text(squad.title)
+                }
+                td("center") {
+                    text(squad.openSlots.toString())
+                }
+                td {
+                    text(squad.host)
+                }
+                td("center") {
+                    button { text("button") }
+                }
+            }
         }
     }
+}
+
+fun invite(name: String) {
+    println("sent invite to '$name'")
 }
